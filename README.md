@@ -1,9 +1,5 @@
 # Bills
 
-
-  [![NPM Version][npm-image]][npm-url]
-  [![NPM Downloads][downloads-image]][downloads-url]
-
 ## api.js
 ```js
 import fs from 'fs';
