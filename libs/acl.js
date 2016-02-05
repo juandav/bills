@@ -15,20 +15,17 @@ acl.prototype = {
 	  var rol = this.rol;
 	  var verifyRol = function(req, res, next) {
 	  	user.findById(req._user, function(err, data){
-	  		if(err){res.status(500).send('Internal Server Error');}
+	  		if(err) res.status(500).send('Internal Server Error');
+	  		
 	  		if(data !== null) {res.status(404).send('could not find the user');}else{
 
 	  			var permission = _.intersection(rol, list);
 	  			var authorized = ( permission.length > 0 ) ? true : false;
 
-	  			req.authorized = authorized;
-					req.db.user = user;
+	  			// req.authorized = authorized;
+				req.db.user = user;
 
-	  			if( authorized ){
-	  				next();
-	  			}else{
-	  				res.status(403).send('the role of the user does not have permission to access this resource');
-	  			}
+	  			authorized ? next() : res.status(403).send('the role of the user does not have permission to access this resource');
 	  		}
 	  	});
 	  }

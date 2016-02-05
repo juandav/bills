@@ -1,5 +1,10 @@
 # Bills
 
+## Installation
+```bash
+$ npm install --save bills 
+```
+
 ## api.js
 ```js
 import fs from 'fs';
@@ -64,27 +69,35 @@ app.listen(3000)
 ```
 
 ## Collection user:  internal settings
-
 ``` js
 user : {
-   name: String,
-    user: { type: String, required: true },
-    pass: String,
-    email: Array,
-    access: { type: Boolean, default: false },
-    verify: { type: Boolean, default: false },
-    rol: {type: Array, enum: data.rol, default: data.default},
-    date: {type:Date, default: new Date()}
+  name  : String,
+  user  : { type: String, required: true },
+  pass  : String,
+  email : Array,
+  access: { type: Boolean, default: false },
+  verify: { type: Boolean, default: false },
+  rol   : { type: Array, enum: data.rol, default: data.default },
+  date  : { type:Date, default: new Date() }
 }
 ``` 
 
 ### Accessing the user collection
 ``` js
 let user = req.db.user;
-``` 
+```
 
-## Installation
+## Accessing user when authenticated.
 
-```bash
-$ npm install --save bills 
+if router.json has the attribute Authenticated = true
+
+``` js
+let user_id = req._user;
+```
+
+## Project structure
+```text
+├── api/
+    ├── controllers/
+    └── router.json
 ```

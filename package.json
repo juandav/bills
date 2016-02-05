@@ -1,35 +1,32 @@
 {
-  "author": {
-    "email": "e.juandav@gmail.com",
-    "name": "juandav"
+  "name": "bills",
+  "version": "0.0.4",
+  "description": "A quick implementation of routing and user validation",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juandav/bills.git"
+  },
+  "keywords": [
+    "express",
+    "acl",
+    "jwt",
+    "enroute"
+  ],
+  "author": "juandav <e.juandav@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juandav/bills/issues"
+  },
+  "homepage": "https://github.com/juandav/bills#readme",
   "dependencies": {
     "assert": "^1.3.0",
     "jwt-simple": "^0.4.1",
-    "lodash": "^4.0.0",
-    "moment": "^2.11.1",
-    "mongoose": "^4.3.7"
-  },
-  "description": "A quick implementation of routing and user validation",
-  "keywords": [
-    "acl",
-    "express",
-    "jwt",
-    "user_validation"
-  ],
-  "license": "MIT",
-  "main": "index.js",
-  "maintainers": [
-    {
-      "name": "juandav",
-      "email": "e.juandav@gmail.com"
-    }
-  ],
-  "name": "bills",
-  "readme": "README.md",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/juandav/bills.git"
-  },
-  "version": "0.0.3"
+    "lodash": "^4.2.1",
+    "moment": "^2.11.2",
+    "mongoose": "^4.4.1"
+  }
 }
