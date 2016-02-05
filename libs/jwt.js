@@ -73,9 +73,9 @@ var encodeToken = function(data) {
    var payload = {
      sub: data._id,
      iat: moment().unix(),
-     exp: moment().add(day, "days").unix(),
+     exp: moment().add(data.day, "days").unix(),
    };
-   return jwt.encode(payload, secret);
+   return jwt.encode(payload, data.secret);
 }
 
 module.exports.encodeToken = encodeToken;
